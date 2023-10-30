@@ -1,0 +1,390 @@
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.draggable {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+}
+.draggable .card-menu, .draggable .position-content {
+  -webkit-app-region: no-drag;
+}
+
+.nav-container {
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+}
+
+button {
+  -webkit-app-region: no-drag;
+}
+
+.electron-btn-group, .menu-group {
+  -webkit-app-region: no-drag;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.MuiButtonBase-root.custom-button {
+  box-shadow: none;
+}
+.MuiButtonBase-root.custom-button:hover {
+  box-shadow: none;
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+.card-container .card-info {
+  padding: 100px 15px 100px 50px;
+  box-sizing: border-box;
+  min-height: 500px;
+  max-height: 500px;
+  position: relative;
+  text-align: left;
+  background-color: #fff;
+  margin-left: 15px;
+  border-radius: 15px 0 0 15px;
+}
+.card-container .card-info .card-title {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.card-container .card-info .card-title h3 {
+  font-size: 24px;
+  line-height: 30px;
+  white-space: pre-wrap;
+  margin: 0 auto;
+  color: #5a5a5a;
+}
+.card-container .card-info .card-title p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #242424;
+  font-weight: 400;
+}
+
+.card-container .card-info::before {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  position: absolute;
+  content: "";
+  background-color: #52B670;
+  top: -20px;
+  left: -50px;
+  opacity: 0.1;
+}
+
+.card-container .card-info::after {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  position: absolute;
+  content: "";
+  background-color: #52B670;
+  bottom: -20px;
+  right: -50px;
+  opacity: 0.1;
+}
+
+.custom-card {
+  position: relative;
+  border-radius: 8px;
+  display: flex;
+  max-width: 810px;
+  max-height: 500px;
+  min-width: 810px;
+  min-height: 500px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+.custom-card .card-menu {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: space-between;
+  max-width: 291px;
+  min-height: 28px;
+}
+
+.short-title.en > span {
+  color: white !important;
+}
+
+.short-title {
+  display: flex;
+  flex-direction: column;
+  top: 38px;
+  left: 36px;
+  position: relative;
+  z-index: 2;
+}
+.short-title .title {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #3C578C;
+}
+.short-title .subtitle {
+  font-size: 13px;
+  line-height: 18px;
+  color: #666;
+}
+.short-title .build-version {
+  font-size: 9px;
+  line-height: 16px;
+  color: #666;
+}
+
+.setting-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.cover {
+  max-width: 400px;
+  min-width: 400px;
+  background-image: linear-gradient(180deg, #2665AF, #83C1FC);
+  position: relative;
+}
+.cover .build-version {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  font-size: 14px;
+  color: #666;
+}
+.cover .cover-en {
+  display: block;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 400px;
+  background-size: contain;
+  position: absolute;
+  background-image: url("./assets/m3.png");
+}
+.cover .cover-cn {
+  display: block;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 400px;
+  background-size: contain;
+  position: absolute;
+  background-image: url("./assets/cover-cn.png");
+}
+
+.align-center {
+  justify-content: center;
+}
+
+.flex-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.internal-card {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  align-items: center;
+  touch-action: none;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.flex-item.card {
+  position: relative;
+  max-width: 400px;
+  min-width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 15px;
+  background-color: #fff;
+  border-radius: 0 15px 15px 0;
+}
+
+.position-top {
+  position: relative;
+  top: 23px;
+  left: 29px;
+}
+
+.flex-direction-column {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.flex-direction-row {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.position-content {
+  top: 45px;
+  bottom: 53px;
+  position: relative;
+  justify-content: space-between;
+  height: 350px;
+  margin: 0 55px;
+  max-width: 280px;
+  padding: 0 5px;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+}
+.position-content .MuiButtonBase-root.custom-button {
+  width: 250px;
+  height: 40px;
+  background: #138356;
+  border-radius: 22px;
+  text-transform: none;
+  position: relative;
+  bottom: -14px;
+}
+.position-content .MuiButtonBase-root.custom-button:hover {
+  background: #82C2FF;
+}
+
+.class-title {
+  font-size: 14px;
+  color: #666;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  width: 100%;
+}
+.class-title .room-name {
+  line-height: 20px;
+}
+
+.classroom {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  box-shadow: 0px 6px 22px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex: 1;
+  height: 100%;
+  min-width: 990px;
+}
+.classroom .live-container {
+  flex: 1;
+  position: relative;
+}
+
+.live-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+  .classroom {
+    min-width: 990px;
+  }
+}
+@media screen and (min-width: 1366px) and (min-height: 768px) {
+  .classroom {
+    min-width: 1366px;
+    min-height: 768px;
+  }
+}
+.home-cover-web {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.home-cover-web .web-menu {
+  display: block;
+  width: 100%;
+}
+.home-cover-web .web-menu .web-menu-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 135px;
+}
+.home-cover-web .web-menu .web-menu-container .site-logo {
+  background-image: url(./assets/site-logo.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+}
+.home-cover-web .web-menu .web-menu-container .short-title {
+  top: 0px;
+  left: 0px;
+  position: relative;
+}
+
+.flex-item.cover {
+  display: flex;
+}
+.flex-item.cover .preview-video {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.flex-item.cover .preview-video .student-placeholder,
+.flex-item.cover .preview-video .teacher-placeholder {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  display: flex;
+  flex: 1 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.flex-item.cover .preview-video .student-placeholder::before,
+.flex-item.cover .preview-video .teacher-placeholder::before {
+  height: 100%;
+  width: 100%;
+  background-size: 155px;
+}/*# sourceMappingURL=index.css.map */
